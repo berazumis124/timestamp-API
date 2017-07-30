@@ -6,10 +6,7 @@ var PORT = process.env.PORT || 4998;
 var resJson = {};
 
 app.use(bodyParser.json());
-
-app.get('/', function(req, res){
-    res.send('TimeStamp API Root');
-});
+app.use(express.static("public"));
 
 app.get('/:time', function (req, res) {
     var urlParam = req.params.time;
